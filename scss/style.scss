@@ -1,0 +1,185 @@
+@import "../bower_components/normalize-scss/_normalize.scss";
+@import "../bower_components/typeplate-starter-kit/css/_typeplate.scss";
+@import "../bower_components/fontawesome/scss/font-awesome.scss";
+
+@mixin gridify($col, $width, $gutter: 2) {
+    @media only screen and (min-width: #{$width}#{"px"}){
+        .grid-#{$col}-#{$width} {
+            & > * {
+                width: #{(100 / $col) - $gutter}#{"%"};
+            }
+        }
+    }
+}
+
+/**
+ * BOX-SIZING
+ */
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+/**
+ * GRIDS
+ */
+
+.grid {
+    width: 100%;
+    display: block;
+    font-size: 0;
+    text-align: justify;
+    position: relative;
+
+    & > * {
+        font-size: medium;
+        text-align: left;
+        display: inline-block;
+        width: 100%;
+        vertical-align: top;
+    }
+
+    &:after {
+        display: inline-block;
+        width: 100%;
+        content: "";
+        font-size: medium;
+    }
+}
+
+@include gridify(2, 400);// creates .grid-2-400
+@include gridify(4, 600);// creates .grid-4-600
+@include gridify(3, 600);// creates .grid-3-600
+
+/**
+ * GENERAL
+ */
+
+body {
+    transition: opacity .25s ease;
+}
+
+.arrow  {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15%;
+    img {
+
+        border-bottom: 2px solid #000;
+    }
+    img:hover {
+        background-color: yellow;
+    }
+
+
+}
+
+
+
+
+
+
+img {
+    width:100%;
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+    border-top: 2px solid #000;
+
+
+    }
+
+
+
+
+.rotate-tshirt {
+    input[type=checkbox]:checked {
+
+            transform: rotateY(180deg);
+}
+}
+
+.container {
+}
+
+.grid-5 > * {
+    width: 20%;
+    border: 2px solid #000;
+    margin-top: -9px;
+    text-align: center;
+
+}
+
+.grid-5 {
+    & > * {
+         &:nth-child(1):hover {
+            background-color: yellow;
+        }
+        &:nth-child(2):hover {
+            background-color: yellow;
+        }
+        &:nth-child(3):hover {
+            background-color: yellow;
+        }
+        &:nth-child(4):hover {
+            background-color: yellow;
+        }
+        &:nth-child(5):hover {
+            background-color: yellow;
+        }
+    }
+}
+
+
+.grid-5 {
+    & > * {
+        &:nth-child(2) {
+            // second element
+        }
+    }
+}
+.tshirt{
+    position:relative;
+}
+
+.grid-2 > * {
+            font-family: "Code";
+}
+
+.grid-2 {
+    & > * {
+        &:nth-child(1) {
+            width:80%;
+
+
+        }
+        &:nth-child(2) {
+            width:14%;
+        }
+    }
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: inline;
+    position: relative;
+}
+
+ul ul {
+    position: absolute;
+    display: none;
+}
+
+li:hover ul {
+    display: block;
+    background-color: yellow;
+    border: 2px solid #000;
+
+}
+
+
+
